@@ -6,8 +6,24 @@
       :host {
         display: block;
       }
+      table{
+        width: 100%;
+      }
+      th{
+        color: whitesmoke;
+        background-color: blue;
+      }
     </style>
-    <h2>Hello [[prop1]]!</h2>
+    <table border="1">
+      <tr>
+        <th>NOMBRES</th>
+      </tr>
+        <template is="dom-repeat" items={{datos}} as="item">
+          <tr>
+            <td>[[item.name]]</td>
+          </tr>
+        </template>
+    </table>
   </template>
 
   <script>
@@ -23,9 +39,16 @@
       static get is() { return 'tabla-element'; }
       static get properties() {
         return {
-          prop1: {
-            type: String,
-            value: 'tabla-element'
+          datos: {
+            type: Array,
+            value(){
+              return[
+                {name:"Han"}
+              ]
+            }
+          },
+          dato:{
+            type:String
           }
         };
       }
