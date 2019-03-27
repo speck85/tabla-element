@@ -1,0 +1,36 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="tabla-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+  </template>
+
+  <script>
+    /**
+     * `tabla-element`
+     * tabla para almacenar resultados
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class TablaElement extends Polymer.Element {
+      static get is() { return 'tabla-element'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'tabla-element'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(TablaElement.is, TablaElement);
+  </script>
+</dom-module>
